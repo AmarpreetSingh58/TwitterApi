@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Statuses> statusesArrayList = new ArrayList<>();
     ResultRecyclerViewAdapter adapter;
     ProgressDialog progressDialog;
+    AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                dialog = new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Search").setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+
                                 EditText serachEdit = (EditText)l.findViewById(R.id.serachETV);
+
                                urlappend = serachEdit.getText().toString();
                                 networkCall();
                                 progressDialog = ProgressDialog.show(MainActivity.this,"Searching...","Please wait while searching...",true,false);
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         statusesArrayList.addAll(twitterData.getStatuses());
                         progressDialog.hide();
+
                         adapter.notifyDataSetChanged();
                     }
                 });
