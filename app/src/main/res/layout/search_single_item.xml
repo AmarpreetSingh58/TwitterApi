@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="16dp"
+    android:layout_marginBottom="8dp"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/profileImage"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/name"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:layout_toEndOf="@id/profileImage"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/screenName"
+            android:layout_below="@id/name"
+            android:padding="4dp"
+            android:layout_alignParentRight="true"
+            android:textStyle="italic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/userId"
+            android:padding="4dp"
+            android:layout_below="@id/screenName"
+            android:layout_toRightOf="@id/profileImage"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeStamp"
+            android:layout_below="@id/userId"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textTV"
+            android:layout_below="@id/profileImage"
+            android:paddingTop="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/link"
+            android:padding="4dp"
+            android:layout_below="@id/textTV"
+            android:layout_toRightOf="@id/profileImage"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B3E5FC"
+            android:elevation="16dp"
+            android:id="@+id/likeButton"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/like_button"
+            android:layout_below="@id/link"
+            android:layout_marginTop="16dp"/>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B3E5FC"
+            android:elevation="16dp"
+            android:id="@+id/retweetButton"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/retweet_button"
+            android:layout_below="@id/link"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/likeButton"
+            android:id="@+id/likeCountTV"
+            android:background="@drawable/custo_text_background"
+            android:padding="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/retweetCountTV"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/retweetButton"
+            android:padding="4dp"
+            android:background="@drawable/custo_text_background"/>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
